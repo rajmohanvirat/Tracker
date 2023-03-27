@@ -1,0 +1,277 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+}
+
+:root {
+  --ff-roboto: 'Roboto', sans-serif;
+  --ff-noto-sans: 'Noto Sans', sans-serif;
+  --transition: all 0.3s linear;
+  --spacing: 0.1rem;
+  --radius: 0.25rem;
+  --light-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  --dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+  --max-width: 1170px;
+  --fixed-width: 450px;
+  --clr-russian-violet : #392b58;
+  --clr-ultra-violet: #645e9d;
+  --clr-white : #fff;
+  --clr-platinum: #dfe0e2;
+  --clr-silver: #aaaaaa;
+  --clr-blue-cryola: #2176ff;
+  --clr-berkeley-blue: #1D3557;
+  --clr-black: #000000;
+  --clr-red: red;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--ff-roboto);
+}
+
+/* global styles */
+ul,
+ol {
+  list-style-type: none;
+}
+a {
+  text-decoration: none;
+}
+h1,
+h2,
+h3,
+h4 {
+  letter-spacing: var(--spacing);
+  text-transform: capitalize;
+  line-height: 1.25;
+  margin-bottom: 0.75rem;
+}
+h1 {
+  font-size: 3rem;
+}
+h2 {
+  font-size: 2rem;
+}
+h3 {
+  font-size: 1.25rem;
+}
+h4 {
+  font-size: 0.875rem;
+}
+p {
+  margin-bottom: 1.25rem;
+}
+@media screen and (min-width: 992px) {
+  h1 {
+    font-size: 4rem;
+  }
+  h2 {
+    font-size: 2.5rem;
+  }
+  h3 {
+    font-size: 1.75rem;
+  }
+  h4 {
+    font-size: 1rem;
+  }
+  body {
+    font-size: 1rem;
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    line-height: 1;
+  }
+}
+/*  global classes */
+
+/* section */
+.section,
+.container {
+  width: 90vw;
+  margin: 0 auto;
+  max-width: var(--max-width);
+}
+
+@media screen and (min-width: 992px) {
+  .section {
+    width: 95vw;
+  }
+}
+
+/* modified code */
+
+body{
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  /* align-items: center; */
+  background-color: #645e9d;
+}
+
+.container{
+  width: 30%;
+  margin-top: 30px;
+  margin-bottom: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 2rem;
+  background-color: rgb(114, 172, 100);
+}
+
+.title{
+  text-transform: uppercase;
+  color: rgb(150, 75, 75);
+  font-size: -10px;
+}
+
+.bolder{
+  font-size: 40px;
+}
+
+.bold{
+  font-size: 25px;
+  font-weight: 900;
+  color: rgb(150, 75, 75);
+}
+.amount{
+  font-size: 25px;
+  margin-top: 5px;
+}
+
+.show-balance{
+  align-self: flex-start;
+  margin-left: 4rem;
+}
+
+.para{
+  margin-top: 20px;
+  margin-bottom: -5px;
+  font-size: 20px;
+  box-shadow: var(--light-shadow);
+  border-radius: 5px;
+  padding: 0.3rem 1rem;
+}
+
+.balance-amt{
+  color: var(--clr-berkeley-blue);
+}
+
+.price-container{
+  display: flex;
+  gap: 1rem;
+  justify-content: space-evenly;
+  box-shadow: var(--light-shadow);
+  padding: 1rem;
+  width: 80%;
+}
+
+
+.transaction{
+  width: 100%;
+  padding: 20px;
+  background-color: rgb(224, 224, 207);
+  border-radius: 5px;
+}
+
+.trans li{
+  box-shadow: var(--dark-shadow);
+  border-radius: var(--radius);
+  padding: 0.5rem 1rem;
+  margin: 7px 0;
+  font-size: 18px;
+  display: flex;
+  justify-content: space-between;
+  font-weight: 500;
+  cursor: pointer;
+  position: relative;
+}
+
+
+.trans li.inp-income{
+  border-left: 5px solid green;
+}
+
+.trans li.inp-expense{
+  border-left: 5px solid orangered;
+}
+
+
+.trans-btn{
+  position: absolute;
+  opacity: 0;
+  left: -15px;
+  padding: 3px;
+  background-color: red;
+  border: none;
+  color: white;
+  border-radius: 3px;
+  cursor: pointer;
+} 
+
+.trans li:hover .trans-btn{
+  opacity: 1;
+}
+
+.trans{
+  list-style-type: none;
+}
+
+ .inc{
+  color: green;
+}
+.inc-clr{
+  color: green;
+}
+.exp{
+  color: orangered;
+}
+.exp-clr{
+  color: orangered;
+}
+
+.input-container{
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  gap: 1rem;
+}
+
+.input-field{
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  font-weight: 500;
+}
+.input-title{
+  font-size: 20px;
+}
+
+input[type='text']{
+  padding: 0.5rem;
+}
+
+.btn{
+  padding: 0.5rem 2rem;
+  background-color: rgb(95, 33, 102);
+  border: none;
+  border-radius: 5px;
+  color: var(--clr-platinum);
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.btn:hover{
+ background-color: red;
+ transition: 0.5s;
+}
